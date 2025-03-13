@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cửa hàng</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="Định dạng.css">
+    <link rel="stylesheet" href="GIỎ HÀNG.css">
+    <link rel="stylesheet" href="Tìm kiếm và lọc.css">
+</head>
+</head>
+<body>
+    <div class="logo">
+        <img src="Ảnh/logo.jpeg" alt="Logo">
+    </div>
+    <h5>Nơi cung cấp thức ăn, phụ kiện, đồ chơi - Kiến thức chăm sóc chó mèo</h5>
+    <header class="sticky-header">
+        <nav class="---Menu">
+           
+            <a href="Phượng PETSHOP.html">TRANG CHỦ</a>
+            <a href="Cửa hàng.html">CỬA HÀNG</a>
+            <a href="Tin tức.html">TIN TỨC</a>
+            <a href="Chúng tôi.html">CHÚNG TÔI</a>
+
+        </nav>
+        <div class="icons">
+            <i class="fas fa-user"></i>    
+            <div class="cart-icon">
+                <button id="cart"> <i class="fas fa-shopping-cart" aria-hidden="true"></i>   </button>
+               
+                <span id="cart-count">0</span><!--Đây là 1 phần tử span với nội dung ban đầu là 0-->
+            </div>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="moddal-title">Giỏ hàng</h5>
+                        <span class="close">&times;</span><!---->
+                    </div>
+                    <div class="modal-body">
+                        <div class="cart-row">
+                            <span class="cart-item cart-hearder cart-column">Sản Phẩm</span>
+                            <span class="cart-price cart-hearder cart-column">Giá</span>
+                            <span class="cart-quantity cart-hearder cart-column">Số lượng</span>
+
+                        </div>
+                        <div class="cart-items">
+                            <div class="modal-body">
+                                <div class="cart-row">
+                                    <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+                                    <span class="cart-price cart-header cart-column">Giá</span>
+                                    <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+                                </div>
+                                <div class="cart-items">
+                                    <div class="cart-row">
+                                    <div class="cart-item cart-column">
+                                        <img class="cart-item-image" src="Ảnh/Thức ăn chó/ROYAL CANIN Mini_225.jpg" width="100" height="100">
+                                        <span class="cart-item-title">Hạt Royal Canin Mini cho chó nhỏ</span>
+                                    </div>
+                                    <span class="cart-price cart-column">225000đ</span>
+                                    <div class="cart-quantity cart-column">
+                                        <input class="cart-quantity-input" type="number" value="1">
+                                        <button class="btn btn-danger" type="button">Xóa</button>
+                                    </div>
+                                </div>
+                            
+                                
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="cart-total">
+                        <strong class="cart-total-title">Tổng Cộng:</strong>
+                        <span class="cart-total-price">0 đ</span>
+                    </div>
+                    
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+                        <button type="button" class="btn btn-primary order">Thanh Toán</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <br>
+    <!--Bộ lọc và tìm kiếm-->
+    <div class="Loc-Timkiem">
+        <select name="" id="categoryLoc" onchange="spLoc()">
+            <option value="all">Tất cả</option>
+            <option value="Thức ăn">Thức ăn</option>
+            <option value="Đồ chơi">Đồ chơi</option>
+            <option value="Phụ kiện">Phụ kiện</option>
+        </select>
+        <select name="" id="typeLoc" onchange="spLoc()">
+            <option value="all">Tất cả</option>
+            <option value="chó">chó</option>
+            <option value="mèo">mèo</option>
+        </select>
+
+        <input type="text" id="nhapTimkiem" placeholder="Tìm kiếm sản phẩm" oninput="spLoc()" >
+    </div>
+    <br>
+    <!--Danh mục sản phẩm-->
+    
+    <section class="shop">
+        <h2 id="thuc-an">THỨC ĂN</h2>
+        <div class="san-pham">
+            <div class="san-pham-" data-category="Thức ăn" data-type="chó">
+                <img class="img-prd" src="Ảnh/Thức ăn chó/ROYAL CANIN Mini_225.jpg" alt="">
+                <a href="#"><h4 class="content-product-h4">Hạt Royal Canin Mini cho chó nhỏ</h4></a>
+                <p><span class="price">225.000</span></p>
+                <button class="b-mua btn-cart" onclick="addToCart('Hạt Royal Canin Mini cho chó nhỏ',255.000)">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Thức ăn" data-type="chó">
+                <img class="img-prd" src="Ảnh/Thức ăn chó/ROYAL CANIN Maxi Adult_180.jpg" alt="">
+                <a href="#"><h4 class="content-product-h4">Hạt Royal Canin Maxi cho chó lớn</h4></a>
+                <p class="price">180.000</p>
+                <button class="b-mua btn-cart" onclick="addToCart('Hạt Royal Canin Maxi cho chó lớn',180.000)">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Thức ăn" data-type="chó">
+                <img class="img-prd" src="Ảnh/Thức ăn chó/hạt mềm cá hồi ORIGI7_95.jpg" alt="">
+                <a href="#"><h4 class="content-product-h4">Hạt mềm cá hồi ORIGI7 cho chó</h4></a>
+                <p class="price">90.000</p>
+                <button class="b-mua btn-cart" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Thức ăn" data-type="chó">
+                <img class="img-prd" src="Ảnh/Thức ăn chó/pate vị gà và rau củ_50.jpg" alt="">
+                <a href="#"><h4 class="content-product-h4">Pate cho chó vị gà và rau củ</h4></a>
+                <p class="price">50.000</p>
+                <button class="b-mua btn-cart" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Thức ăn" data-type="chó">
+                <img  class="img-prd" src="Ảnh/Thức ăn chó/sua-bot-goats-milk-new-zealand_350.jpg" alt="">
+                <a href="#"><h4 class="content-product-h4">Sữa bột cho chó Goats milk new zealand</h4></a>
+                <p class="price">350.000</p>
+                <button class="b-mua btn-cart" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Thức ăn" data-type="mèo">
+                <img src="Ảnh/thức ăn cho mèo/hạt cho mèo con vị gà_130.jpg" alt="">
+                <a href="#"><h4>Hạt cho mèo con vị gà Royal Canin</h4></a>
+                <p>130.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Thức ăn" data-type="mèo">
+                <img src="Ảnh/thức ăn cho mèo/hạt cho mèo lớn _ 120.jpg" alt="">
+                <a href="#"><h4>Hạt cho mèo lớn Royal Canin</h4></a>
+                <p>120.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Thức ăn" data-type="mèo">
+                <img src="Ảnh/thức ăn cho mèo/thức ăn mèo vị thịt gà_400.jpg" alt="">
+                <a href="#"><h4>Hạt cho mèo vị thịt gà Pro Plan</h4></a>
+                <p>400.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Thức ăn" data-type="mèo">
+                <img src="Ảnh/thức ăn cho mèo/pate mèo vị cá ngừ_30.jpg" alt="">
+                <a href="#"><h4>Hộp pate mèo vị cá ngừ Catseafish</h4></a>
+                <p>30.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Thức ăn" data-type="mèo">
+                <img src="Ảnh/thức ăn cho mèo/sữa tươi uống liền cho mèo_40.jpg" alt="">
+                <a href="#"><h4>Sữa tươi cho mèo uống liền</h4></a>
+                <p>40.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+
+        </div>
+        <h2>PHỤ KIỆN</h2>
+        <div class="san-pham">
+            <div class="san-pham-" data-category="Phụ kiện" data-type="chó">
+                <img src="Ảnh/Phụ kiện cho chó/vong-co-kem-day-dat-ambaby_200.jpg" alt="">
+                <a href="#"><h4>Vòng cổ cho chó có kèm dây dắt Ambaby</h4></a>
+                <p>200.000</p>
+                <button class="b-mua onclick="addToCart()"">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Phụ kiện" data-type="chó">
+                <img src="Ảnh/Phụ kiện cho chó/vồng cổ đính đá_90.jpg" alt="">
+                <a href="#"><h4>Vòng cổ cho chó có đính đá lấp lánh</h4></a>
+                <p>90.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Phụ kiện" data-type="chó">
+                <img src="Ảnh/Phụ kiện cho chó/yem ambaby-1jxs043_250.jpg" alt="">
+                <a href="#"><h4>Yếm dễ thương cho chó có kèm dây dẫn</h4></a>
+                <p>250.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Phụ kiện" data-type="chó">
+                <img src="Ảnh/Phụ kiện cho chó/mu-cho-cho-meo-ambaby-pet-1jxs055-155.jpg" alt="">
+                <a href="#"><h4>Mũ cho chó Ambaby pet vải canvas</h4></a>
+                <p>150.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Phụ kiện" data-type="chó">
+                <img src="Ảnh/Phụ kiện cho chó/rọ mõm vịt cute_75.jpg" alt="">
+                <a href="#"><h4>Rọ mõm vịt vàng cute silicon chống cắn</h4></a>
+                <p>70.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Phụ kiện" data-type="mèo">
+                <img src="Ảnh/áo cho mèo/áo babytea cho mèo kèm dây_300.jpg" alt="">
+                <a href="#"><h4>Áo cho mèo có kèm dây Babytea</h4></a>
+                <p>300.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Phụ kiện" data-type="mèo">
+                <img src="Ảnh/áo cho mèo/áo yếm cho mèo.jpg" alt="">
+                <a href="#"><h4>Áo yếm cho mèo hồng mộng mơ kèm dây</h4></a>
+                <p>260.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Phụ kiện" data-type="mèo">
+                <img src="Ảnh/áo cho mèo/vong-co-cho-cho-meo-kem-day-dat-ambaby-pet-1jxs007.jpg" alt="">
+                <a href="#"><h4>Vòng cổ cho mèo kèm dây dắt</h4></a>
+                <p>180.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Phụ kiện" data-type="mèo">
+                <img src="Ảnh/áo cho mèo/vòng cỏ thắt nơ kèm dây _195.jpg" alt="">
+                <a href="#"><h4>Vòng cổ cho mèo thắt nơ có kèm dây</h4></a>
+                <p>195.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Phụ kiện" data-type="mèo">
+                <img src="Ảnh/áo cho mèo/vòng cổ.png" alt="">
+                <a href="#"><h4>Vòng cổ mèo phong cách có khắc tên riêng</h4></a>
+                <p>90.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+        </div>
+        <h2>ĐỒ CHƠI</h2>
+        <div class="san-pham">
+            <div class="san-pham-" data-category="Đồ chơi"  data-type="chó">
+                <img src="Ảnh/đồ chơi cho chó/Đĩa bay thưởng thức ăn_145.jpg" alt="">
+                <a href="#"><h4>Đĩa bay thưởng thức ăn cho chó</h4></a>
+                <p>145.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Đồ chơi" data-type="chó">
+                <img src="Ảnh/đồ chơi cho chó/thú bông có âm thanh.jpg" alt="">
+                <a href="#"><h4>Thú bông cho chó có âm thanh</h4></a>
+                <p>145.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Đồ chơi" data-type="chó">
+                <img src="Ảnh/đồ chơi cho chó/ốc sên mềm.jpg" alt="">
+                <a href="#"><h4>Thú bông ốc sên mềm cho chó</h4></a>
+                <p>30.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Đồ chơi" data-type="chó">
+                <img src="Ảnh/đồ chơi cho chó/day thừng thắt nơ bằng cao su.jpg" alt="">
+                <a href="#"><h4>Đồ chơi cho chó dây thừng thắt nơ xinh</h4></a>
+                <p>50.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Đồ chơi" data-type="chó">
+                <img src="Ảnh/đồ chơi cho chó/tham-mat-giai-nhiet-cho-cho-meo-paw-pet-cool-mat.jpg" alt="">
+                <a href="#"><h4>Thảm mát giải nhiệt cho chó mùa hè</h4></a>
+                <p>145.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Đồ chơi" data-type="mèo">
+                <img src="Ảnh/đồ chơi mèo/cần câu _ 75.jpg" alt="">
+                <a href="#"><h4>Cần câu gắn lông và chuông chơi cùng mèo</h4></a>
+                <p>75.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+                
+            </div>
+            <div class="san-pham-" data-category="Đồ chơi" data-type="mèo">
+                <img src="Ảnh/đồ chơi mèo/cây cà rốt.jpg" alt="">
+                <a href="#"><h4>Cào móng hình cây cà rốt cho mèo</h4></a>
+                <p>200.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Đồ chơi" data-type="mèo">
+                <img src="Ảnh/đồ chơi mèo/bàn cào móng_220.jpg" alt="">
+                <a href="#"><h4>Bàn cào móng nhỏ xinh cho mèo con</h4></a>
+                <p>70.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Đồ chơi" data-type="mèo">
+                <img src="Ảnh/đồ chơi mèo/do-choi-meo-bang-coi-paw-hinh-ca-size-xl.jpg" alt="">
+                <a href="#"><h4>Thú bông cho mèo hình cá bằng cói</h4></a>
+                <p>75.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-" data-category="Đồ chơi" data-type="mèo">
+                <img src="Ảnh/đồ chơi mèo/nhà cây cho mèo_2300.jpg" alt="">
+                <a href="#"><h4>Nhà cây của mèo với nhiều tầng kèm nệm</h4></a>
+                <p>2.400.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+        </div>
+    </section>
+    <script src="Thao tác.js"></script>
+    <script src="ttgiohang.js"></script>
+    <!---Tạo chân trang-->
+    <footer class="footer">
+        <div>
+            <h3>Liên hệ</h3>
+                <p>Địa chỉ: 123 Đường ABC, Thành phố XYZ</p>
+                <p>Điện thoại: 0123 456 789</p>
+                <p>Email: ntphuong1482003@gmail.com</p>
+        </div>
+        <p>&copy; 2024 Cửa hàng thú cưng. Thiết kế bởi Nguyễn Thị Phượng</p>
+    </footer>
+   
+</body>
+</html>

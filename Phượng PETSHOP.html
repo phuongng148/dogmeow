@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOGMEOW.Pet shop</title>
+    <link rel="stylesheet" href="Định dạng.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="Ảnh/logo.jpeg" alt="Logo">
+        
+    </div>
+    <h5>Nơi cung cấp thức ăn, phụ kiện, đồ chơi - Kiến thức chăm sóc chó mèo</h5>
+     <!---Menu điều hướng-->
+    <header  class="sticky-header">
+        
+        <nav class="---Menu">
+            <a href="Phượng PETSHOP.html">TRANG CHỦ</a>
+            <a href="Cửa hàng.html">CỬA HÀNG</a>
+            <a href="Tin tức.html">TIN TỨC</a>
+            <a href="Chúng tôi.html">CHÚNG TÔI</a>
+
+        </nav>
+        <!--icon người và giỏ hàng-->
+        <div class="icons">
+            <i class="fas fa-user"></i>
+            <div class="cart-icon">   
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span><!--Đây là 1 phần tử span với nội dung ban đàu là 0-->
+            </div>
+        </div>
+    </header>
+    <!--Tạo banner-->
+    <div class="banner">
+        <h2>CHÀO MỪNG BẠN ĐẾN VỚI DOGMEOW</h2>
+        <p><i>Thú cưng của bạn đang cần gì?</i></p>
+        <a href="Cửa hàng.html">
+        <button class="bt">KHÁM PHÁ</button>
+        </a>
+    </div>
+    <br>
+   
+<p style="color:  #097474; font-size: 24px; text-align: center; margin-top: 80px; margin-bottom: 20px;" > Danh mục sản phẩm</p>
+    <div class="nhom">
+        <div class="nhom1"><img src="Ảnh/ảnh chó 2.jpg" alt="">
+        <p>Thức ăn</p>
+        </div>
+    
+            <div class="nhom1"> <img src="Ảnh/ảnh mèo1.jpg" alt="">
+            <p>Phụ kiện</p>
+        </div>   
+        <div class="nhom1"> <img src="Ảnh/ảnh chó 1.jpg" alt="">
+        <p>Đồ chơi</p>
+        </div>  
+        <div class="nhom1"> <img src="Ảnh/ảnh mèo 2.jpg" alt="">
+        <p>Chó/mèo</p>
+        </div>  
+    </div>
+    <br>
+    <!--Sản phẩm nổi bật-->
+    <h2 style="color:  #097474; font-size: 24px; text-align: center; margin-top: 40px; ">Sản phẩm nổi bật</h2>
+    <section class="shop">
+       
+        <div class="san-pham">
+            <div class="san-pham-">
+                <img src="Ảnh/Thức ăn chó/ROYAL CANIN Mini_225.jpg" alt="">
+                <a href="#"><h4>Hạt Royal Canin Mini cho chó nhỏ</h4></a>
+                <p>225.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-">
+                <img src="Ảnh/Thức ăn chó/hạt mềm cá hồi ORIGI7_95.jpg" alt="">
+                <a href="#"><h4>Hạt mềm cá hồi ORIGI7 cho chó</h4></a>
+                <p>90.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-">
+                <img src="Ảnh/thức ăn cho mèo/hạt cho mèo lớn _ 120.jpg" alt="">
+                <a href="#"><h4>Hạt cho mèo lớn Royal Canin</h4></a>
+                <p>120.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-">
+                <img src="Ảnh/áo cho mèo/vòng cỏ thắt nơ kèm dây _195.jpg" alt="">
+                <a href="#"><h4>Vòng cổ cho mèo thắt nơ có kèm dây</h4></a>
+                <p>195.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+            <div class="san-pham-">
+                <img src="Ảnh/đồ chơi mèo/cây cà rốt.jpg" alt="">
+                <a href="#"><h4>Cào móng hình cây cà rốt cho mèo</h4></a>
+                <p>200.000</p>
+                <button class="b-mua" onclick="addToCart()">Mua hàng</button>
+            </div>
+        </div>
+    </section>
+    <script src="Thao tác.js"></script>
+    <!--Chân trang-->
+    <footer class="footer">
+        <div>
+            <h3>Liên hệ</h3>
+                <p>Địa chỉ: 123 Đường ABC, Thành phố XYZ</p>
+                <p>Điện thoại: 0123 456 789</p>
+                <p>Email: ntphuong1482003@gmail.com</p>
+        </div>
+        <p>&copy; 2024 Cửa hàng thú cưng. Thiết kế bởi Nguyễn Thị Phượng</p>
+    </footer>
+   
+</body>
+</html>

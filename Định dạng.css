@@ -1,0 +1,288 @@
+body
+{
+    font-family: Arial, sans-serif;
+    padding-top: 70px;/*điều chỉnh để tránh nội dung bị che khuất*/
+}
+/*header*/
+.logo
+{
+    text-align: center;
+}
+.logo img
+{
+    width: 30%;
+    height: auto;
+}
+h5
+{
+    color: rgb(155, 153, 153);
+    font-family: Arial;
+    text-align: center;
+}
+
+header
+{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: rgb(9, 116, 116);
+
+}
+.sticky-header{
+    position: fixed;/*Giups hearder luôn cố định trên web*/
+    top:0;
+    left:0;
+    width: 98%;
+   
+    z-index: 1000;/*đặt index cao để header nằm trên các phần rử khác của trang*/
+}
+.---Menu {
+    display: flex;
+    gap: 15px;
+}
+.---Menu a
+{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Arial;
+}
+.---Menu a:hover
+{
+    color: #4FD94C;
+}
+.icons
+{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.icons i {
+    font-size: 20px;
+    color: white;
+}
+.icons i:hover
+{
+    color: #4FD94C;
+}
+.cart-icon{
+    position: relative;
+}
+#cart-count{
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color:#097474;
+    color: white;
+    border-radius: 50%;
+    padding: 4px 6px;
+    font-size: 10px;
+    font-weight: bold;
+}
+/*banner*/
+.banner
+{
+    text-align: center;
+    padding: 60px 20px;
+    background-image: url('Ảnh/banner3.jpg');
+    background-size: cover;
+    background-position: center;
+    color:  #097474 ;
+    position: relative;
+}
+.banner h2
+{
+    font-size: 36px;
+    
+}
+.banner p
+{
+    font-size: 24px;
+    color: rgb(155, 153, 153) ;
+}
+.bt
+{
+    padding: 10px 20px;
+    background-color: #097474 ;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold; 
+    transition: color 0.3s ease;
+}
+.bt:hover
+{
+    color:#4FD94C;
+}
+.nhom1{
+    
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+/*Cửa hàng */
+.shop 
+{
+    padding: 20px;
+    width: 100%;
+     margin: auto;
+}
+.shop h2{
+    font-size: 24px;
+    color: #097474;
+    margin: 10px 0;
+}
+.san-pham{
+    display: flex;
+    flex-wrap: wrap; /* Cho phép các sản phẩm bên trong xuống dòng nếu không đủ không gian */
+    /*justify-content: space-between;*/
+}
+.san-pham-{
+    border: 1px solid #ddd;
+    text-align: center;
+    width:19%;
+    margin-bottom: 20px;
+
+}
+.san-pham-:hover{
+    background-color: #dbd7d7;
+}
+.san-pham- img{
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.san-pham- img:hover{
+    transform: scale(1.1);/*Phóng to ảnh lên 10% khi di chuột vào*/
+}
+.san-pham- h4{
+    font-size: 20px;
+    color: black;
+    margin: 10px 0;
+    font-weight: normal;
+}
+.san-pham- a{
+    text-decoration: none;
+    cursor: pointer;
+}
+.san-pham- h4:hover{
+color: #097474;
+}
+
+.san-pham- p{
+    font-size: 16px;
+    color: #093073;
+    margin-bottom: 5px 0;
+
+}
+.b-mua{
+    background-color: #097474;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+.b-mua:hover{
+    color: #4FD94C;
+}
+
+.nhom{
+    display: flex;
+    justify-content: space-around;/*dãn đều các ảnh*/
+    align-items: center;
+    
+    margin-bottom: 20px;
+}
+.nhom img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;/* đảm bảo ảnh được cắt vừa với khung hình*/
+    transition: transform 0.3s ease;
+    border-radius:50%;
+}
+.nhom img:hover{
+    transform: scale(1.1);
+}
+.nhom1{
+    text-align: center;
+    font-size: 16px;
+}
+/*tin tức*/
+h1{
+    color: #097474;
+    font-size: 36px;
+}
+main{
+    padding: 20px;
+
+}
+.news{
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 10px auto;
+}
+.news-{
+    display: block;
+}
+.news img{
+    width: 300px;
+    height: auto;
+    flex-shrink: 0; /*Ngăn ảnh co lại khi không gian hẹp*/
+}
+.news h2{
+    font-size: 24px;
+    margin-top: 0;
+    color: #093073;
+}
+.news .date{
+    font-size: 10px;
+    color: #929292;
+}
+.mews .tomtat{
+    padding: 0 10px;
+    margin-top: 10px;
+    font-size: 16px;
+    color: black;
+}
+.read-more{
+    display: inline-block;
+    color:  #9a9c9a;
+    transition: color 0.3s ease;
+}
+.read-more:hover{
+    color: #363636;
+}
+/* Chân trang*/
+.footer{
+    background-color:black;
+    color: white;
+    text-align: left;
+    padding: 10px 5px;
+    font-size: 14px;
+}
+.bang {
+    width: 100%;
+    height: 200px;
+}
+table, th, td {
+    border: 3px solid white;
+    border-collapse: collapse;
+    border-radius: 10px;
+  }
+   .bang th, a, td {
+    background-color:#097474;
+    color: white;
+    text-align: center;
+  }
+  
